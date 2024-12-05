@@ -60,5 +60,20 @@ public class P03_signInTesti {
 
     }
 
+    @Test
+    public void PositiveLogin(){
+        driver.findElement(By.id("username")).sendKeys("babayigit");
+        driver.findElement(By.id("password")).sendKeys("Mb3471&");
+        driver.findElement(By.xpath("//input[@value='Login']")).click();
+        String expectedMessage="Successful entry!";
+        String actualMessage=driver.findElement(By.id("result")).getText();
+
+        if (actualMessage.equals(expectedMessage)){
+            System.out.println("Giriş Yapıldı.\nSuccessful entry!");
+        }
+
+    }
+
+
 
 }
